@@ -45,7 +45,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="toLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2qf-YO-yD8"/>
                                     <segue destination="Lgs-5j-zoI" kind="show" identifier="goToLogin" id="cIH-df-xrj"/>
                                 </connections>
                             </button>
@@ -104,7 +103,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1af-3l-6Q7">
                                         <rect key="frame" x="0.0" y="70" width="200" height="30"/>

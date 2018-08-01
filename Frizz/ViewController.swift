@@ -28,11 +28,6 @@ class ViewController: UIViewController {
         backgroundImage.addSubview(blurEffectView)
     }
     
-    
-    @IBAction func toLogin(_ sender: UIButton) {
-        
-    }
-    
     //Two functions below to remove the navigation area
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

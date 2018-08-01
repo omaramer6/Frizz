@@ -14,6 +14,8 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userPhoneNumber: UITextField!
     
+    let segueIdentifier = "toMainMenu"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +73,10 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "toMainMenu" {
-            if ((userName.text?.isEmpty)! || (userPhoneNumber.text?.isEmpty)!) == true {
+        if identifier == segueIdentifier {
+            if let name = userName.text, name.isEmpty {
+                return false
+            }; if let phone = userPhoneNumber.text, phone.isEmpty {
                 return false
             }
         }
@@ -80,7 +84,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMainMenu" {
+        if segue.identifier == segueIdentifier {
             let destination = segue.destination as? MainMenuScreen
             destination?.name = userName.text
             destination?.phone = userPhoneNumber.text
