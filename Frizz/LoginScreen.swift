@@ -74,9 +74,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == segueIdentifier {
-            if let name = userName.text, name.isEmpty {
-                return false
-            }; if let phone = userPhoneNumber.text, phone.isEmpty {
+            if let name = userName.text, let phone = userPhoneNumber.text, name.isEmpty || phone.isEmpty {
                 return false
             }
         }
