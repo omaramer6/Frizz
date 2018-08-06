@@ -83,7 +83,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
-            let destination = segue.destination as? MainMenuScreen
+            let destination = segue.destination as? OfficialMenu
             destination?.name = userName.text
             destination?.phone = userPhoneNumber.text
         }

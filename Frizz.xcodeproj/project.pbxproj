@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871CDF302116F151001984BF /* OfficialMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CDF2F2116F151001984BF /* OfficialMenu.swift */; };
 		873D85A3210F0D150073A33A /* Marguaritas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 873D85A2210F0D150073A33A /* Marguaritas.ttf */; };
 		873D85A7210F1F9B0073A33A /* Prisma.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 873D85A6210F1F9B0073A33A /* Prisma.ttf */; };
 		873D85AB210F21840073A33A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D85AA210F21840073A33A /* LoginScreen.swift */; };
@@ -15,10 +16,12 @@
 		87BBC10D210DFAB70005A5F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BBC10B210DFAB70005A5F8 /* Main.storyboard */; };
 		87BBC10F210DFAB70005A5F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87BBC10E210DFAB70005A5F8 /* Assets.xcassets */; };
 		87BBC112210DFAB70005A5F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BBC110210DFAB70005A5F8 /* LaunchScreen.storyboard */; };
-		87EA42AC211082A000622186 /* MainMenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA42AB211082A000622186 /* MainMenuScreen.swift */; };
+		87EA42B42113450D00622186 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA42B32113450D00622186 /* PageViewController.swift */; };
+		87EA42B62113584800622186 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA42B52113584800622186 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		871CDF2F2116F151001984BF /* OfficialMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialMenu.swift; sourceTree = "<group>"; };
 		873D85A2210F0D150073A33A /* Marguaritas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Marguaritas.ttf; path = ../../../Sketch/marguaritas/Marguaritas.ttf; sourceTree = "<group>"; };
 		873D85A6210F1F9B0073A33A /* Prisma.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Prisma.ttf; path = ../../../../Downloads/prisma/Prisma.ttf; sourceTree = "<group>"; };
 		873D85AA210F21840073A33A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -29,7 +32,8 @@
 		87BBC10E210DFAB70005A5F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87BBC111210DFAB70005A5F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87BBC113210DFAB70005A5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87EA42AB211082A000622186 /* MainMenuScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScreen.swift; sourceTree = "<group>"; };
+		87EA42B32113450D00622186 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		87EA42B52113584800622186 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,9 @@
 				87BBC107210DFAB70005A5F8 /* AppDelegate.swift */,
 				87BBC109210DFAB70005A5F8 /* ViewController.swift */,
 				873D85AA210F21840073A33A /* LoginScreen.swift */,
-				87EA42AB211082A000622186 /* MainMenuScreen.swift */,
+				87EA42B32113450D00622186 /* PageViewController.swift */,
+				87EA42B52113584800622186 /* MenuViewController.swift */,
+				871CDF2F2116F151001984BF /* OfficialMenu.swift */,
 				873D85A6210F1F9B0073A33A /* Prisma.ttf */,
 				873D85A2210F0D150073A33A /* Marguaritas.ttf */,
 				87BBC10E210DFAB70005A5F8 /* Assets.xcassets */,
@@ -151,9 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				87BBC10A210DFAB70005A5F8 /* ViewController.swift in Sources */,
-				87EA42AC211082A000622186 /* MainMenuScreen.swift in Sources */,
+				87EA42B62113584800622186 /* MenuViewController.swift in Sources */,
 				87BBC108210DFAB70005A5F8 /* AppDelegate.swift in Sources */,
 				873D85AB210F21840073A33A /* LoginScreen.swift in Sources */,
+				87EA42B42113450D00622186 /* PageViewController.swift in Sources */,
+				871CDF302116F151001984BF /* OfficialMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
