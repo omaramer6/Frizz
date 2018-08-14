@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OfficialMenu: UIViewController, PaginingDelegate {
+class OfficialMenu: UIViewController, PaginingDelegate, UIViewControllerTransitioningDelegate {
     
     var name: String?
     var phone: String?
