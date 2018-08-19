@@ -16,6 +16,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelega
     @IBOutlet weak var userPhoneNumber: UITextField!
     
     let segueIdentifier = "toMainMenu"
+    static var results: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelega
                 returnUserData()
                 self.performSegue(withIdentifier: segueIdentifier, sender: self)
             } else {
-                print("You either cancelled or not logged in")
+                return
             }
         }
     }
@@ -61,6 +62,7 @@ class LoginScreen: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelega
         _ = request?.start(completionHandler: { (connection, result, error) in
             if error == nil {
                 print(result!)
+                LoginScreen.results = result
             } else {
                 print(error!)
             }
@@ -94,40 +96,74 @@ class LoginScreen: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelega
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         view.addGestureRecognizer(tapGesture)
     }
-    
-    @objc func handleTap () {
-        view.endEditing(true) //will force keyboard to close
-    }
-    
-    //Login button
-    @IBAction func toMenu(_ sender: UIButton) {
-        view.endEditing(true) //will force keyboard to close
-        
-        //Adds alert button
-        let alert = UIAlertController(title: "Login Failed", message: "One of the fields is empty", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-        
-        //check if one of the fields is empty or not
-        if ((userName.text?.isEmpty)! || (userPhoneNumber.text?.isEmpty)!) == true {
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == segueIdentifier {
-            if let name = userName.text, let phone = userPhoneNumber.text, name.isEmpty || phone.isEmpty {
+    //Checks whether name is all letters or not
+    private func containsOnlyLetters(input: String) -> Bool {
+        for chr in input {
+            if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z") && !(chr == " ") ) {
                 return false
             }
         }
         return true
     }
+    //Check whether phone number is all numbers
+    private func containsOnlyNumbers (input: String) -> Bool {
+        for chr in input {
+            if !(chr >= "0" && chr <= "9") {
+                return false
+            }
+        }
+        return true
+    }
+
+@objc func handleTap () {
+    view.endEditing(true) //will force keyboard to close
+}
+
+//Login button
+@IBAction func toMenu(_ sender: UIButton) {
+    view.endEditing(true) //will force keyboard to close
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueIdentifier {
-            let destination = segue.destination as? OfficialMenu
-            destination?.name = userName.text
-            destination?.phone = userPhoneNumber.text
+    //Adds alert button
+    let emptyFieldAlert = UIAlertController(title: "Login Failed", message: "One of the fields is empty", preferredStyle: UIAlertControllerStyle.alert)
+    emptyFieldAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+    //Adds alert button
+    let wrongPhoneNumberAlert = UIAlertController(title: "Login Failed", message: "Wrong Phone Number", preferredStyle: UIAlertControllerStyle.alert)
+    wrongPhoneNumberAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+    //Adds alert button
+    let invalidNameAlert = UIAlertController(title: "Login Failed", message: "Wrong Name", preferredStyle: UIAlertControllerStyle.alert)
+    invalidNameAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+    
+    //check if one of the fields is empty or not
+    if ((userName.text?.isEmpty)! || (userPhoneNumber.text?.isEmpty)!) == true {
+        self.present(emptyFieldAlert, animated: true, completion: nil)
+    }; if userPhoneNumber.text?.count != 11 || !containsOnlyNumbers(input: userPhoneNumber.text!) {
+        self.present(wrongPhoneNumberAlert, animated: true, completion: nil)
+    }; if !containsOnlyLetters(input: userName.text!) {
+        self.present(invalidNameAlert, animated: true, completion: nil)
+    }
+}
+
+override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    if identifier == segueIdentifier {
+        if let name = userName.text, let phone = userPhoneNumber.text, name.isEmpty || phone.isEmpty {
+            return false
+        }
+        if let phoneDigits = userPhoneNumber.text, phoneDigits.count != 11 || !containsOnlyNumbers(input: userPhoneNumber.text!) {
+            return false
+        }
+        if let _ = userName.text, !containsOnlyLetters(input: userName.text!) {
+            return false
         }
     }
+    return true
+}
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == segueIdentifier {
+        let destination = segue.destination as? OfficialMenu
+        destination?.name = userName.text
+        destination?.phone = userPhoneNumber.text
+    }
+}
 }
 

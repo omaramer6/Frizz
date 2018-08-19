@@ -22,6 +22,8 @@
 		87BBC112210DFAB70005A5F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BBC110210DFAB70005A5F8 /* LaunchScreen.storyboard */; };
 		87EA42B42113450D00622186 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA42B32113450D00622186 /* PageViewController.swift */; };
 		87EA42B62113584800622186 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA42B52113584800622186 /* MenuViewController.swift */; };
+		87EA8D242124483C00780010 /* MyCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA8D232124483C00780010 /* MyCartCell.swift */; };
+		87EA8D2A21296EAE00780010 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA8D2921296EAE00780010 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		87BBC113210DFAB70005A5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87EA42B32113450D00622186 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		87EA42B52113584800622186 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		87EA8D232124483C00780010 /* MyCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartCell.swift; sourceTree = "<group>"; };
+		87EA8D2921296EAE00780010 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8F2B4165EB3421904F5F1AE7 /* Pods_Frizz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frizz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4B74BA9E5CC80771A43543 /* Pods-Frizz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frizz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frizz/Pods-Frizz.release.xcconfig"; sourceTree = "<group>"; };
 		F005265B1E9DCB35F4C0271A /* Pods-Frizz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frizz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frizz/Pods-Frizz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,12 +86,14 @@
 				87BBC107210DFAB70005A5F8 /* AppDelegate.swift */,
 				87BBC109210DFAB70005A5F8 /* ViewController.swift */,
 				873D85AA210F21840073A33A /* LoginScreen.swift */,
-				87EA42B32113450D00622186 /* PageViewController.swift */,
 				871CDF2F2116F151001984BF /* OfficialMenu.swift */,
 				871CDF3321206256001984BF /* MyCart.swift */,
+				87EA8D232124483C00780010 /* MyCartCell.swift */,
 				87EA42B52113584800622186 /* MenuViewController.swift */,
 				871CDF31211C301B001984BF /* CustomCell.swift */,
 				871CDF372121716C001984BF /* CircularTransition.swift */,
+				87EA8D2921296EAE00780010 /* Colors.swift */,
+				87EA42B32113450D00622186 /* PageViewController.swift */,
 				873D85A6210F1F9B0073A33A /* Prisma.ttf */,
 				873D85A2210F0D150073A33A /* Marguaritas.ttf */,
 				87BBC10E210DFAB70005A5F8 /* Assets.xcassets */,
@@ -235,12 +241,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				87BBC10A210DFAB70005A5F8 /* ViewController.swift in Sources */,
+				87EA8D2A21296EAE00780010 /* Colors.swift in Sources */,
 				87EA42B62113584800622186 /* MenuViewController.swift in Sources */,
 				871CDF32211C301B001984BF /* CustomCell.swift in Sources */,
 				87BBC108210DFAB70005A5F8 /* AppDelegate.swift in Sources */,
 				871CDF382121716C001984BF /* CircularTransition.swift in Sources */,
 				873D85AB210F21840073A33A /* LoginScreen.swift in Sources */,
 				87EA42B42113450D00622186 /* PageViewController.swift in Sources */,
+				87EA8D242124483C00780010 /* MyCartCell.swift in Sources */,
 				871CDF302116F151001984BF /* OfficialMenu.swift in Sources */,
 				871CDF3421206256001984BF /* MyCart.swift in Sources */,
 			);

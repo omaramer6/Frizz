@@ -10,12 +10,14 @@ import UIKit
 
 class CellContent {
     var name: String
-    var price: String
+    var price: Double
+    var currency: String
     var count: Int
     
-    init(name: String, price: String, count: Int) {
+    init(name: String, price: Double, currency: String, count: Int) {
         self.name = name
         self.price = price
+        self.currency = currency
         self.count = count
     }
 }
@@ -46,25 +48,29 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    static var contentFries = [CellContent(name: "French Fries", price: "10.00 EGP", count: 0),
-                               CellContent(name: "Cheese Fries", price: "15.00 EGP", count: 0),
-                               CellContent(name: "Curly Fries", price: "20.00 EGP", count: 0),
-                               CellContent(name: "Wedges", price: "18.00 EGP", count: 0)]
+    static var contentFries = [CellContent(name: "French Fries", price: 10.00, currency: "EGP", count: 0),
+                               CellContent(name: "Cheese Fries", price: 15.00, currency: "EGP", count: 0),
+                               CellContent(name: "Curly Fries", price: 20.00, currency: "EGP", count: 0),
+                               CellContent(name: "Wedges", price: 18.00, currency: "EGP", count: 0),
+                               CellContent(name: "Sweet Potato Fries", price: 20.00, currency: "EGP", count: 0),
+                               CellContent(name: "Hell Fries", price: 25.00, currency: "EGP", count: 0)]
     
-    static var contentFizz = [CellContent(name: "CocaCola", price: "12.00 EGP", count: 0),
-                              CellContent(name: "Miranda", price: "12.00 EGP", count: 0),
-                              CellContent(name: "Sprite", price: "12.00 EGP", count: 0),
-                              CellContent(name: "Mountain Dew", price: "12.00 EGP", count: 0),
-                              CellContent(name: "Schweppes Gold", price: "15.00 EGP", count: 0)]
+    static var contentFizz = [CellContent(name: "CocaCola", price: 12.00, currency: "EGP", count: 0),
+                              CellContent(name: "Miranda", price: 12.00, currency: "EGP", count: 0),
+                              CellContent(name: "Sprite", price: 12.00, currency: "EGP", count: 0),
+                              CellContent(name: "Mountain Dew", price: 12.00, currency: "EGP", count: 0),
+                              CellContent(name: "Schweppes Gold", price: 15.00, currency: "EGP", count: 0)]
     
-    static var contentDessert = [CellContent(name: "Ice-Cream", price: "12.00 EGP", count: 0),
-                                 CellContent(name: "Waffles", price: "20.00 EGP", count: 0)]
+    static var contentDessert = [CellContent(name: "Ice-Cream", price: 12.00, currency: "EGP", count: 0),
+                                 CellContent(name: "Waffles", price: 20.00, currency: "EGP", count: 0)]
     
-    static var contentSauce = [CellContent(name: "Ketchup", price: "5.00 EGP", count: 0),
-                               CellContent(name: "Mayo", price: "5.00 EGP", count: 0),
-                               CellContent(name: "Honey Mustard", price: "5.00 EGP", count: 0),
-                               CellContent(name: "BBQ", price: "5.00 EGP", count: 0),
-                               CellContent(name: "Jalapeno Cheese", price: "5.00 EGP", count: 0)]
+    static var contentSauce = [CellContent(name: "Ketchup", price: 5.00, currency: "EGP", count: 0),
+                               CellContent(name: "Mayo", price: 5.00, currency: "EGP", count: 0),
+                               CellContent(name: "Honey Mustard", price: 5.00, currency: "EGP", count: 0),
+                               CellContent(name: "BBQ", price: 5.00, currency: "EGP", count: 0),
+                               CellContent(name: "Jalapeno Cheese", price: 5.00, currency: "EGP", count: 0),
+                               CellContent(name: "Hot Sauce", price: 5.00, currency: "EGP", count: 0),
+                               CellContent(name: "Ranch", price: 5.00, currency: "EGP", count: 0)]
     
     static var data : [String:[CellContent]] = ["Fries" : contentFries,
                                                 "Fizz" : contentFizz,
@@ -110,7 +116,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! CustomCell
         let item = tableContent[indexPath.row]
         cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = item.price
+        cell.detailTextLabel?.text = String(item.price) + " " + item.currency 
         cell.textLabel?.font = UIFont .systemFont(ofSize: 20.00)
         cell.detailTextLabel?.font = UIFont .systemFont(ofSize: 14.00)
         cell.index = indexPath.row
