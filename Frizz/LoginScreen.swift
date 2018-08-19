@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
-class LoginScreen: UIViewController, UITextFieldDelegate {
+class LoginScreen: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var userName: UITextField!
@@ -16,19 +17,59 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     
     let segueIdentifier = "toMainMenu"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTextFields()
         configureTapGesture()
         
+        let loginButtonFB = FBSDKLoginButton()
         let blurEffect = UIBlurEffect(style: .regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
         
         blurEffectView.frame = backgroundImage.bounds
         blurEffectView.contentMode = .scaleToFill
+        
+        loginButtonFB.frame = CGRect(x: 64, y: 520, width: view.frame.width - 128, height: 40)
+        loginButtonFB.delegate = self
+        
         backgroundImage.addSubview(blurEffectView)
+        view.addSubview(loginButtonFB)
+    }
+    
+    //function for FB login button delegate
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+            return
+        } else {
+            if (result.grantedPermissions != nil) {
+                returnUserData()
+                self.performSegue(withIdentifier: segueIdentifier, sender: self)
+            } else {
+                print("You either cancelled or not logged in")
+            }
+        }
+    }
+    
+    //getting user data when logging in
+    func returnUserData() {
+        let accessToken = FBSDKAccessToken.current()
+        let request = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "email, name"], tokenString: accessToken?.tokenString  , version: nil, httpMethod: "GET")
+        _ = request?.start(completionHandler: { (connection, result, error) in
+            if error == nil {
+                print(result!)
+            } else {
+                print(error!)
+            }
+        })
+    }
+    
+    //function for FB login button delegate
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Did logout of Facebook")
     }
     
     //When hitting the return key it would work

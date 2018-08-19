@@ -1,0 +1,6 @@
+framework module Pods_Frizz {
+  umbrella header "Pods-Frizz-umbrella.h"
+
+  export *
+  module * { export * }
+}

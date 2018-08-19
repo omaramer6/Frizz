@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49B081708E184FB54D5BD942 /* Pods_Frizz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2B4165EB3421904F5F1AE7 /* Pods_Frizz.framework */; };
 		871CDF302116F151001984BF /* OfficialMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CDF2F2116F151001984BF /* OfficialMenu.swift */; };
 		871CDF32211C301B001984BF /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CDF31211C301B001984BF /* CustomCell.swift */; };
 		871CDF3421206256001984BF /* MyCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CDF3321206256001984BF /* MyCart.swift */; };
+		871CDF382121716C001984BF /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871CDF372121716C001984BF /* CircularTransition.swift */; };
 		873D85A3210F0D150073A33A /* Marguaritas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 873D85A2210F0D150073A33A /* Marguaritas.ttf */; };
 		873D85A7210F1F9B0073A33A /* Prisma.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 873D85A6210F1F9B0073A33A /* Prisma.ttf */; };
 		873D85AB210F21840073A33A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873D85AA210F21840073A33A /* LoginScreen.swift */; };
@@ -26,6 +28,7 @@
 		871CDF2F2116F151001984BF /* OfficialMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialMenu.swift; sourceTree = "<group>"; };
 		871CDF31211C301B001984BF /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		871CDF3321206256001984BF /* MyCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCart.swift; sourceTree = "<group>"; };
+		871CDF372121716C001984BF /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		873D85A2210F0D150073A33A /* Marguaritas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Marguaritas.ttf; path = ../../../Sketch/marguaritas/Marguaritas.ttf; sourceTree = "<group>"; };
 		873D85A6210F1F9B0073A33A /* Prisma.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Prisma.ttf; path = ../../../../Downloads/prisma/Prisma.ttf; sourceTree = "<group>"; };
 		873D85AA210F21840073A33A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -38,6 +41,9 @@
 		87BBC113210DFAB70005A5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87EA42B32113450D00622186 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		87EA42B52113584800622186 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8F2B4165EB3421904F5F1AE7 /* Pods_Frizz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frizz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4B74BA9E5CC80771A43543 /* Pods-Frizz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frizz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frizz/Pods-Frizz.release.xcconfig"; sourceTree = "<group>"; };
+		F005265B1E9DCB35F4C0271A /* Pods-Frizz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frizz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frizz/Pods-Frizz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B081708E184FB54D5BD942 /* Pods_Frizz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +63,8 @@
 			children = (
 				87BBC106210DFAB70005A5F8 /* Frizz */,
 				87BBC105210DFAB70005A5F8 /* Products */,
+				C9822854E0DEBE0C241EF273 /* Pods */,
+				B010D64DDE80A4539561BB93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +87,7 @@
 				871CDF3321206256001984BF /* MyCart.swift */,
 				87EA42B52113584800622186 /* MenuViewController.swift */,
 				871CDF31211C301B001984BF /* CustomCell.swift */,
+				871CDF372121716C001984BF /* CircularTransition.swift */,
 				873D85A6210F1F9B0073A33A /* Prisma.ttf */,
 				873D85A2210F0D150073A33A /* Marguaritas.ttf */,
 				87BBC10E210DFAB70005A5F8 /* Assets.xcassets */,
@@ -88,6 +98,23 @@
 			path = Frizz;
 			sourceTree = "<group>";
 		};
+		B010D64DDE80A4539561BB93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F2B4165EB3421904F5F1AE7 /* Pods_Frizz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9822854E0DEBE0C241EF273 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F005265B1E9DCB35F4C0271A /* Pods-Frizz.debug.xcconfig */,
+				BC4B74BA9E5CC80771A43543 /* Pods-Frizz.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87BBC116210DFAB70005A5F8 /* Build configuration list for PBXNativeTarget "Frizz" */;
 			buildPhases = (
+				8D9D3B6A4EC75352CD2BE914 /* [CP] Check Pods Manifest.lock */,
 				87BBC100210DFAB70005A5F8 /* Sources */,
 				87BBC101210DFAB70005A5F8 /* Frameworks */,
 				87BBC102210DFAB70005A5F8 /* Resources */,
+				7DBDA25BF7722C5D1BED8A5F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +186,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7DBDA25BF7722C5D1BED8A5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Frizz/Pods-Frizz-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Frizz/Pods-Frizz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D9D3B6A4EC75352CD2BE914 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Frizz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		87BBC100210DFAB70005A5F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -166,6 +238,7 @@
 				87EA42B62113584800622186 /* MenuViewController.swift in Sources */,
 				871CDF32211C301B001984BF /* CustomCell.swift in Sources */,
 				87BBC108210DFAB70005A5F8 /* AppDelegate.swift in Sources */,
+				871CDF382121716C001984BF /* CircularTransition.swift in Sources */,
 				873D85AB210F21840073A33A /* LoginScreen.swift in Sources */,
 				87EA42B42113450D00622186 /* PageViewController.swift in Sources */,
 				871CDF302116F151001984BF /* OfficialMenu.swift in Sources */,
@@ -308,6 +381,7 @@
 		};
 		87BBC117210DFAB70005A5F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F005265B1E9DCB35F4C0271A /* Pods-Frizz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -325,6 +399,7 @@
 		};
 		87BBC118210DFAB70005A5F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC4B74BA9E5CC80771A43543 /* Pods-Frizz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
